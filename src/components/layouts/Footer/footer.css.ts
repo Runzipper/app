@@ -9,6 +9,7 @@ export const footerStyle = style({
 	justifyContent: 'space-between',
 	paddingInline: Theme.spacing[8],
 	borderTop: `1px solid ${Theme.color.borderLight}`,
+	color: '#6C7280',
 });
 
 export const navigationStyle = style({

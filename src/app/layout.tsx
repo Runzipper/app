@@ -1,3 +1,5 @@
+import Footer from '@/components/layouts/Footer';
+import Header from '@/components/layouts/Header';
 import '@/styles/globals.css';
 import '@/styles/index.css';
 import type { Metadata } from 'next';
@@ -14,7 +16,17 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body>{children}</body>
+			<body
+				style={{
+					display: 'grid',
+					gridTemplateRows: 'auto 1fr auto',
+					minHeight: '100vh',
+				}}
+			>
+				<Header />
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }

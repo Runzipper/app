@@ -1327,16 +1327,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@runzipper/ui@npm:^0.0.29":
-  version: 0.0.29
-  resolution: "@runzipper/ui@npm:0.0.29::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40runzipper%2Fui%2F0.0.29%2Fc8d89e709546d8e22834c3e0a1a0d01d6967c734"
+"@runzipper/ui@npm:^0.0.30":
+  version: 0.0.30
+  resolution: "@runzipper/ui@npm:0.0.30::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40runzipper%2Fui%2F0.0.30%2F483c17b6fcea8eb04e30fcc6f87c8e746c98b39c"
   dependencies:
     "@vanilla-extract/css": "npm:^1.17.4"
     clsx: "npm:^2.1.1"
   peerDependencies:
     react: ^19.2.0
     react-dom: ^19.2.0
-  checksum: 10c0/e32622eb9369d5bee65c6fa83f729d97d994d17d2f901b4c9e2cb242e33001cadbdaa9e246aa2bab85cbb89e4f238b5115dc1aa95ac55f6b205dbc16f8c4cff4
+  checksum: 10c0/8d9ad39314302f6aca31f07e4730ca8ecf4b19bdf6559e63f0166a3b977d3efebfc7145f7c8dbe372c1be9adf840d5828ec0942085635a34f5df83502c5bb2ca
   languageName: node
   linkType: hard
 
@@ -2057,7 +2057,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:2.2.0"
     "@chromatic-com/storybook": "npm:^4.1.3"
-    "@runzipper/ui": "npm:^0.0.29"
+    "@runzipper/ui": "npm:^0.0.30"
     "@storybook/addon-a11y": "npm:^10.1.4"
     "@storybook/addon-docs": "npm:^10.1.4"
     "@storybook/addon-styling-webpack": "npm:^3.0.0"
@@ -2073,6 +2073,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:^4.0.15"
     babel-plugin-react-compiler: "npm:1.0.0"
     clsx: "npm:^2.1.1"
+    fflate: "npm:^0.8.2"
     next: "npm:16.0.7"
     playwright: "npm:^1.57.0"
     react: "npm:19.2.0"
@@ -2743,6 +2744,13 @@ __metadata:
     picomatch:
       optional: true
   checksum: 10c0/e345083c4306b3aed6cb8ec551e26c36bab5c511e99ea4576a16750ddc8d3240e63826cc624f5ae17ad4dc82e68a253213b60d556c11bfad064b7607847ed07f
+  languageName: node
+  linkType: hard
+
+"fflate@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "fflate@npm:0.8.2"
+  checksum: 10c0/03448d630c0a583abea594835a9fdb2aaf7d67787055a761515bf4ed862913cfd693b4c4ffd5c3f3b355a70cf1e19033e9ae5aedcca103188aaff91b8bd6e293
   languageName: node
   linkType: hard
 

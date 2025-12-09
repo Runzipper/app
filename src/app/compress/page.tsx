@@ -1,8 +1,15 @@
 'use client';
 import { extractMetaDataFromFileList } from '@/utils/format';
-import { UI } from '@runzipper/ui';
+import { Typography, UI } from '@runzipper/ui';
 import { useState } from 'react';
-import { containerStyle, dropboxContainerStyle, toggleStyle } from './page.css';
+import {
+	containerStyle,
+	dropboxContainerStyle,
+	dropboxContainerHalfStyle,
+	tableContainerStyle,
+	tableDescriptionStyle,
+	toggleStyle,
+} from './page.css';
 
 const MODE = {
 	file: {
@@ -33,7 +40,9 @@ export default function CompressPage() {
 
 	return (
 		<div className={containerStyle}>
-			<div className={dropboxContainerStyle}>
+			<div
+				className={`${dropboxContainerStyle} ${selectedFileList ? dropboxContainerHalfStyle : ''}`}
+			>
 				<UI.Toggle
 					value={selectedMode}
 					option1={MODE.file}
@@ -48,10 +57,18 @@ export default function CompressPage() {
 				/>
 			</div>
 			{selectedFileList && (
-				<UI.Table
-					columns={['파일 이름', '크기', '유형']}
-					rows={filesMetaData}
-				/>
+				<div className={tableContainerStyle}>
+					<Typography.Heading textType="h3" size="secondary">
+						파일 미리보기
+					</Typography.Heading>
+					<Typography.Regular textType="p" className={tableDescriptionStyle}>
+						선택된 파일들이 압축됩니다.
+					</Typography.Regular>
+					<UI.Table
+						columns={['파일 이름', '크기', '유형']}
+						rows={filesMetaData}
+					/>
+				</div>
 			)}
 		</div>
 	);

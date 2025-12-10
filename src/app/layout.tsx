@@ -3,6 +3,7 @@ import Header from '@/components/layouts/Header';
 import '@/styles/globals.css';
 import '@/styles/index.css';
 import type { Metadata } from 'next';
+import { bodyStyle } from './layout.css';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -16,13 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body
-				style={{
-					display: 'grid',
-					gridTemplateRows: 'auto 1fr auto',
-					minHeight: '100vh',
-				}}
-			>
+			<body className={bodyStyle}>
 				<Header />
 				{children}
 				<Footer />

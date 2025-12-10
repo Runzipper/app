@@ -1,6 +1,12 @@
 import { Typography } from '@runzipper/ui';
+import clsx from 'clsx';
 import Link from 'next/link';
-import { footerStyle, navigationStyle, textStyle } from './footer.css';
+import {
+	copyrightNotice as copyrightNoticeStyle,
+	footerStyle,
+	navigationStyle,
+	textStyle,
+} from './footer.css';
 
 const Footer = () => {
 	return (
@@ -22,8 +28,10 @@ const Footer = () => {
 					</Typography.Regular>
 				</Link>
 			</nav>
-
-			<Typography.Regular textType="small" className={textStyle}>
+			<Typography.Regular
+				textType="small"
+				className={clsx(textStyle, copyrightNoticeStyle)}
+			>
 				&#64;BHyeonKim. All rights reserved
 			</Typography.Regular>
 		</footer>

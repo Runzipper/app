@@ -8,6 +8,7 @@ import {
 	containerStyle,
 	dropboxContainerHalfStyle,
 	dropboxContainerStyle,
+	filedropStyle,
 	tableContainerStyle,
 	tableDescriptionStyle,
 	toggleStyle,
@@ -70,6 +71,7 @@ export default function CompressPage() {
 					allowDirectory={selectedMode === 'directory'}
 					multiple={selectedMode !== 'directory'}
 					onDropFile={handleFile}
+					className={filedropStyle}
 				/>
 			</div>
 			{selectedFileList && (

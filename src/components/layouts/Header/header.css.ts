@@ -2,6 +2,10 @@ import { Theme } from '@runzipper/ui';
 import { style } from '@vanilla-extract/css';
 
 export const headerStyle = style({
+	position: 'fixed',
+	top: 0,
+	left: 0,
+	right: 0,
 	display: 'flex',
 	justifyContent: 'space-between',
 	alignItems: 'center',
@@ -26,4 +30,9 @@ export const buttonStyle = style({
 	alignItems: 'center',
 	justifyContent: 'center',
 	letterSpacing: 1.02,
+});
+
+export const clearfixStyle = style({
+	width: '100%',
+	height: 64,
 });

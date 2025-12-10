@@ -7,6 +7,7 @@ export const containerStyle = style({
 	flexDirection: 'row',
 	paddingInline: 144,
 	gap: Theme.spacing['2'],
+	height: '100%',
 
 	'@media': {
 		'screen and (max-width:1439px)': {
@@ -23,6 +24,7 @@ export const dropboxContainerStyle = style({
 	flexBasis: '100%',
 	gap: Theme.spacing[3],
 	transition: 'flex-basis 0.5s ease-in-out',
+	minHeight: 0,
 });
 
 export const dropboxContainerHalfStyle = style({
@@ -39,9 +41,13 @@ const visible = keyframes({
 });
 
 export const tableContainerStyle = style({
+	display: 'flex',
+	flexDirection: 'column',
+	height: '100%',
 	flexGrow: 1,
 	flexShrink: 1,
 	flexBasis: '50%',
+	minHeight: 0,
 	opacity: 0,
 	animation: `${visible} 0.5s ease-in-out`,
 	animationDelay: '0.7s',

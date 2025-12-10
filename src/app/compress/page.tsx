@@ -1,5 +1,5 @@
 'use client';
-
+import useZipCompress from '@/hooks/useZipCompress';
 import { extractMetaDataFromFileList } from '@/utils/format';
 import { Icon, Typography, UI } from '@runzipper/ui';
 import { useState } from 'react';
@@ -27,6 +27,7 @@ const MODE = {
 export default function CompressPage() {
 	const [selectedMode, setSelectedMode] = useState<keyof typeof MODE>('file');
 	const [selectedFileList, setSelectedFileList] = useState<FileList>();
+	const [isCompressing, compress, error] = useZipCompress();
 
 	const handleMode = (mode: unknown) => {
 		setSelectedMode(mode as keyof typeof MODE);
@@ -34,6 +35,12 @@ export default function CompressPage() {
 
 	const handleFile = (files: FileList) => {
 		setSelectedFileList(files);
+	};
+
+	const handleCompress = async () => {
+		if (!selectedFileList) return;
+
+		compress(selectedFileList);
 	};
 
 	const filesMetaData = selectedFileList
@@ -45,6 +52,13 @@ export default function CompressPage() {
 			<div
 				className={`${dropboxContainerStyle} ${selectedFileList ? dropboxContainerHalfStyle : ''}`}
 			>
+				{error && (
+					<UI.Notification
+						type="warn"
+						title="문제가 발생했습니다."
+						description={error}
+					/>
+				)}
 				<UI.Toggle
 					value={selectedMode}
 					option1={MODE.file}
@@ -70,9 +84,15 @@ export default function CompressPage() {
 						columns={['파일 이름', '크기', '유형']}
 						rows={filesMetaData}
 					/>
-					<UI.Button className={compressButtonStyle}>
+					<UI.Button
+						className={compressButtonStyle}
+						onClick={handleCompress}
+						disabled={isCompressing}
+					>
 						<Icon icon="IconUpload" />
-						<Typography.Bold textType="span">압축하기</Typography.Bold>
+						<Typography.Bold textType="span">
+							{isCompressing ? '압축 중...' : '압축하기'}
+						</Typography.Bold>
 					</UI.Button>
 				</div>
 			)}

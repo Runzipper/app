@@ -1,11 +1,13 @@
 'use client';
+
 import { extractMetaDataFromFileList } from '@/utils/format';
-import { Typography, UI } from '@runzipper/ui';
+import { Icon, Typography, UI } from '@runzipper/ui';
 import { useState } from 'react';
 import {
+	compressButtonStyle,
 	containerStyle,
-	dropboxContainerStyle,
 	dropboxContainerHalfStyle,
+	dropboxContainerStyle,
 	tableContainerStyle,
 	tableDescriptionStyle,
 	toggleStyle,
@@ -68,6 +70,10 @@ export default function CompressPage() {
 						columns={['파일 이름', '크기', '유형']}
 						rows={filesMetaData}
 					/>
+					<UI.Button className={compressButtonStyle}>
+						<Icon icon="IconUpload" />
+						<Typography.Bold textType="span">압축하기</Typography.Bold>
+					</UI.Button>
 				</div>
 			)}
 		</div>

@@ -59,3 +59,12 @@ export const tableDescriptionStyle = style({
 	marginTop: 8,
 	marginBottom: 24,
 });
+
+export const compressButtonStyle = style({
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	alignSelf: 'flex-end',
+	gap: Theme.spacing['2'],
+	marginTop: Theme.spacing['2'],
+});

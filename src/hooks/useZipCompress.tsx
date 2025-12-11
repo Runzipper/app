@@ -1,5 +1,5 @@
 import type { COMPRESSION_MODE } from '@/constants';
-import { compressTarGz, compressZip } from '@/utils/compress';
+import { compressTar, compressTarGz, compressZip } from '@/utils/compress';
 import { useState } from 'react';
 
 const useCompress = (
@@ -10,6 +10,7 @@ const useCompress = (
 
 	const compress = async (fileList: FileList) => {
 		setIsCompressing(true);
+		setError('');
 
 		try {
 			// FileList를 객체로 변환
@@ -34,28 +35,24 @@ const useCompress = (
 			// 모든 파일 읽기 완료 대기
 			await Promise.all(fileReadPromises);
 
-			// 압축 모드에 따라 분기
-			if (mode.value === 'tar.gz') {
-				const url = await compressTarGz(fileData);
+			let url = '';
 
-				const link = document.createElement('a');
-				link.href = url;
-				link.download = `compressed_${Date.now()}.zip`;
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
-				URL.revokeObjectURL(url);
+			// 압축 모드에 따라 분기하여 압축
+			if (mode.value === 'tar') {
+				url = await compressTar(fileData);
+			} else if (mode.value === 'tar.gz') {
+				url = await compressTarGz(fileData);
 			} else {
-				const url = await compressZip(fileData);
-
-				const link = document.createElement('a');
-				link.href = url;
-				link.download = `compressed_${Date.now()}.zip`;
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
-				URL.revokeObjectURL(url);
+				url = await compressZip(fileData);
 			}
+
+			const link = document.createElement('a');
+			link.href = url;
+			link.download = `compressed_${Date.now()}.${mode.value}`;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+			URL.revokeObjectURL(url);
 		} catch (error) {
 			if (error instanceof Error) {
 				setError(`파일 읽기 중 오류가 발생했습니다. ${error.message}`);

@@ -1,32 +1,7 @@
 import { gzip, zip } from 'fflate';
 import { packTar } from 'modern-tar';
 
-export const compressZip = (
-	fileData: Record<string, Uint8Array>,
-): Promise<string> => {
-	return new Promise((resolve, reject) => {
-		zip(fileData, { level: 6 }, (err, data) => {
-			if (err) {
-				let errorMessage = '압축 중 오류가 발생했습니다.';
-				if (err instanceof Error) {
-					errorMessage += ` ${err.message}`;
-				}
-
-				reject(new Error(errorMessage));
-			}
-
-			const blob = new Blob([data as BlobPart], {
-				type: 'application/zip',
-			});
-			const url = URL.createObjectURL(blob);
-			resolve(url);
-		});
-	});
-};
-
-export const compressTarGz = async (
-	fileData: Record<string, Uint8Array>,
-): Promise<string> => {
+const archiveToTar = async (fileData: Record<string, Uint8Array>) => {
 	// 디렉토리 구조 추출
 	const directories = new Set<string>();
 	Object.keys(fileData).forEach((filePath) => {
@@ -62,8 +37,36 @@ export const compressTarGz = async (
 	// 디렉토리 먼저, 파일 나중에
 	const tarEntries = [...dirEntries, ...fileEntries];
 
-	// TAR 생성 (비동기)
-	const tarData = await packTar(tarEntries);
+	return packTar(tarEntries);
+};
+
+export const compressZip = (
+	fileData: Record<string, Uint8Array>,
+): Promise<string> => {
+	return new Promise((resolve, reject) => {
+		zip(fileData, { level: 6 }, (err, data) => {
+			if (err) {
+				let errorMessage = '압축 중 오류가 발생했습니다.';
+				if (err instanceof Error) {
+					errorMessage += ` ${err.message}`;
+				}
+
+				reject(new Error(errorMessage));
+			}
+
+			const blob = new Blob([data as BlobPart], {
+				type: 'application/zip',
+			});
+			const url = URL.createObjectURL(blob);
+			resolve(url);
+		});
+	});
+};
+
+export const compressTarGz = async (
+	fileData: Record<string, Uint8Array>,
+): Promise<string> => {
+	const tarData = await archiveToTar(fileData);
 
 	// GZIP 압축
 	return new Promise((resolve, reject) => {
@@ -84,4 +87,14 @@ export const compressTarGz = async (
 			resolve(url);
 		});
 	});
+};
+
+export const compressTar = async (fileData: Record<string, Uint8Array>) => {
+	const tarData = await archiveToTar(fileData);
+
+	const blob = new Blob([tarData as BlobPart], {
+		type: 'application/x-tar',
+	});
+	const url = URL.createObjectURL(blob);
+	return url;
 };

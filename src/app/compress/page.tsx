@@ -1,9 +1,11 @@
 'use client';
+import { COMPRESSION_MODE, FILE_SELECT_MODE } from '@/constants';
 import useZipCompress from '@/hooks/useZipCompress';
 import { extractMetaDataFromFileList } from '@/utils/format';
 import { Icon, Typography, UI } from '@runzipper/ui';
 import { useState } from 'react';
 import {
+	buttonContainer,
 	compressButtonStyle,
 	containerStyle,
 	dropboxContainerHalfStyle,
@@ -14,24 +16,21 @@ import {
 	toggleStyle,
 } from './page.css';
 
-const MODE = {
-	file: {
-		label: '파일',
-		value: 'file',
-	},
-	directory: {
-		label: '폴더',
-		value: 'directory',
-	},
-};
-
 export default function CompressPage() {
-	const [selectedMode, setSelectedMode] = useState<keyof typeof MODE>('file');
+	const [fileSelectMode, setFileSelectMode] =
+		useState<keyof typeof FILE_SELECT_MODE>('file');
+	const [compressionMode, setCompressionMode] = useState(COMPRESSION_MODE.zip);
 	const [selectedFileList, setSelectedFileList] = useState<FileList>();
-	const [isCompressing, compress, error] = useZipCompress();
+	const [isCompressing, compress, error] = useZipCompress(compressionMode);
 
-	const handleMode = (mode: unknown) => {
-		setSelectedMode(mode as keyof typeof MODE);
+	const handleCompressionMode = (mode: unknown) => {
+		setCompressionMode(
+			mode as (typeof COMPRESSION_MODE)[keyof typeof COMPRESSION_MODE],
+		);
+	};
+
+	const handleFileSelectMode = (mode: unknown) => {
+		setFileSelectMode(mode as keyof typeof FILE_SELECT_MODE);
 	};
 
 	const handleFile = (files: FileList) => {
@@ -61,15 +60,15 @@ export default function CompressPage() {
 					/>
 				)}
 				<UI.Toggle
-					value={selectedMode}
-					option1={MODE.file}
-					option2={MODE.directory}
-					onChange={handleMode}
+					value={fileSelectMode}
+					option1={FILE_SELECT_MODE.file}
+					option2={FILE_SELECT_MODE.directory}
+					onChange={handleFileSelectMode}
 					className={toggleStyle}
 				/>
 				<UI.FileDrop
-					allowDirectory={selectedMode === 'directory'}
-					multiple={selectedMode !== 'directory'}
+					allowDirectory={fileSelectMode === 'directory'}
+					multiple={fileSelectMode !== 'directory'}
 					onDropFile={handleFile}
 					className={filedropStyle}
 				/>
@@ -86,16 +85,23 @@ export default function CompressPage() {
 						columns={['파일 이름', '크기', '유형']}
 						rows={filesMetaData}
 					/>
-					<UI.Button
-						className={compressButtonStyle}
-						onClick={handleCompress}
-						disabled={isCompressing}
-					>
-						<Icon icon="IconUpload" />
-						<Typography.Bold textType="span">
-							{isCompressing ? '압축 중...' : '압축하기'}
-						</Typography.Bold>
-					</UI.Button>
+					<div className={buttonContainer}>
+						<UI.Dropdown
+							items={Object.values(COMPRESSION_MODE)}
+							value={compressionMode}
+							onSelect={handleCompressionMode}
+						/>
+						<UI.Button
+							className={compressButtonStyle}
+							onClick={handleCompress}
+							disabled={isCompressing}
+						>
+							<Icon icon="IconUpload" />
+							<Typography.Bold textType="span">
+								{isCompressing ? '압축 중...' : '압축하기'}
+							</Typography.Bold>
+						</UI.Button>
+					</div>
 				</div>
 			)}
 		</div>

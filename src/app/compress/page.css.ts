@@ -1,5 +1,5 @@
 import { Theme } from '@runzipper/ui';
-import { keyframes, style } from '@vanilla-extract/css';
+import { globalStyle, keyframes, style } from '@vanilla-extract/css';
 
 export const containerStyle = style({
 	flex: 1,
@@ -85,5 +85,15 @@ export const compressButtonStyle = style({
 	justifyContent: 'center',
 	alignSelf: 'flex-end',
 	gap: Theme.spacing['2'],
+});
+
+export const buttonContainer = style({
+	display: 'flex',
+	justifyContent: 'flex-end',
+	gap: Theme.spacing['2'],
 	marginTop: Theme.spacing['2'],
+});
+
+globalStyle(`${buttonContainer} button`, {
+	height: '100%',
 });

@@ -1,6 +1,8 @@
 'use client';
+
 import { COMPRESSION_MODE, FILE_SELECT_MODE } from '@/constants';
 import useCompress from '@/hooks/useZipCompress';
+import type { CompressionMode, FileSelectMode } from '@/types/compress';
 import { extractMetaDataFromFileList } from '@/utils/format';
 import { Icon, Typography, UI } from '@runzipper/ui';
 import { useState } from 'react';
@@ -17,20 +19,19 @@ import {
 } from './page.css';
 
 export default function CompressPage() {
-	const [fileSelectMode, setFileSelectMode] =
-		useState<keyof typeof FILE_SELECT_MODE>('file');
-	const [compressionMode, setCompressionMode] = useState(COMPRESSION_MODE.zip);
+	const [fileSelectMode, setFileSelectMode] = useState<FileSelectMode>('file');
+	const [compressionMode, setCompressionMode] = useState<CompressionMode>(
+		COMPRESSION_MODE.zip,
+	);
 	const [selectedFileList, setSelectedFileList] = useState<FileList>();
 	const [isCompressing, compress, error] = useCompress(compressionMode);
 
 	const handleCompressionMode = (mode: unknown) => {
-		setCompressionMode(
-			mode as (typeof COMPRESSION_MODE)[keyof typeof COMPRESSION_MODE],
-		);
+		setCompressionMode(mode as CompressionMode);
 	};
 
 	const handleFileSelectMode = (mode: unknown) => {
-		setFileSelectMode(mode as keyof typeof FILE_SELECT_MODE);
+		setFileSelectMode(mode as FileSelectMode);
 	};
 
 	const handleFile = (files: FileList) => {

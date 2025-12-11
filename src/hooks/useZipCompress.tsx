@@ -1,9 +1,9 @@
-import type { COMPRESSION_MODE } from '@/constants';
+import type { CompressionMode } from '@/types/compress';
 import { compressTar, compressTarGz, compressZip } from '@/utils/compress';
 import { useState } from 'react';
 
 const useCompress = (
-	mode: (typeof COMPRESSION_MODE)[keyof typeof COMPRESSION_MODE],
+	mode: CompressionMode,
 ): [boolean, (fileList: FileList) => Promise<void>, string] => {
 	const [isCompressing, setIsCompressing] = useState(false);
 	const [error, setError] = useState('');

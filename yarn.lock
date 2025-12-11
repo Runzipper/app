@@ -2074,6 +2074,7 @@ __metadata:
     babel-plugin-react-compiler: "npm:1.0.0"
     clsx: "npm:^2.1.1"
     fflate: "npm:^0.8.2"
+    modern-tar: "npm:^0.7.2"
     next: "npm:16.0.7"
     playwright: "npm:^1.57.0"
     react: "npm:19.2.0"
@@ -3337,6 +3338,13 @@ __metadata:
   version: 1.1.0
   resolution: "modern-ahocorasick@npm:1.1.0"
   checksum: 10c0/63fda0dab6f39886970550f5e37c4ea41cfe0c69573a7371ebc3b2db5993ed5cf4aef3e2e454e6d730992cbd4482ed9d641509c038f2ca661ccb939d822cb3ad
+  languageName: node
+  linkType: hard
+
+"modern-tar@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "modern-tar@npm:0.7.2"
+  checksum: 10c0/74c5eb606df2e653056ae19c4146394b5ea3aa28577b0ad4e62a3102cf7d92d8d7e7d231d6e6c07475dc7fca3d6dfe68fd2d50f8cef27a9cf75dff8ec2cdd27b
   languageName: node
   linkType: hard
 

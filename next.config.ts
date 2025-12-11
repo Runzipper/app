@@ -6,6 +6,9 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig: NextConfig = {
 	/* config options here */
 	reactCompiler: true,
+	async redirects() {
+		return [{ source: '/', destination: '/compress', permanent: true }];
+	},
 };
 
 export default withVanillaExtract(nextConfig);

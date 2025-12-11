@@ -7,7 +7,8 @@ import { bodyStyle } from './layout.css';
 
 export const metadata: Metadata = {
 	title: 'Runzipper',
-	description: 'Compress files on browser.',
+	description:
+		'Compress and archive your files directly in your browser with support for ZIP, TAR, and TAR.GZ formats. No server uploads, no installation required, and complete privacy protection. All compression processing happens locally on your device, ensuring your sensitive files never leave your computer.',
 	manifest: '/site.webmanifest',
 	appleWebApp: {
 		title: 'Runzipper',

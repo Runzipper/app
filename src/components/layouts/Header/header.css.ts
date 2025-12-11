@@ -13,6 +13,8 @@ export const headerStyle = style({
 	height: 64,
 	paddingInline: Theme.spacing[8],
 	borderBottom: `1px solid ${Theme.color.borderLight}`,
+	zIndex: Theme.z.header,
+	backgroundColor: Theme.color.white,
 });
 
 export const logoStyle = style({

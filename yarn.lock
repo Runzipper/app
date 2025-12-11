@@ -1327,16 +1327,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@runzipper/ui@npm:^0.0.34":
-  version: 0.0.34
-  resolution: "@runzipper/ui@npm:0.0.34::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40runzipper%2Fui%2F0.0.34%2F0c41b2c42875e09c9c0e0453758e47e6f3bb1b6f"
+"@runzipper/ui@npm:^0.0.35":
+  version: 0.0.35
+  resolution: "@runzipper/ui@npm:0.0.35::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40runzipper%2Fui%2F0.0.35%2F645c8582eb7e3dd3c183167b8500f6947ac2e67f"
   dependencies:
     "@vanilla-extract/css": "npm:^1.17.4"
     clsx: "npm:^2.1.1"
   peerDependencies:
     react: ^19.2.0
     react-dom: ^19.2.0
-  checksum: 10c0/5be92d182b8582d68c5cd01d464fef910477e243e980f84bf6acd628a98610c76f7b97bd45a26bda6dbb0aa4a42ad8477c77a1b62c5e702276802eb0d2c4856a
+  checksum: 10c0/e8ab4e0d056d01a202ad2fc8bf0590d6d573b89c2492664309206af8cec9b884281e793d3676a42dafb51208c5e5735de26552a45efd817cf8e50877d8fce2c8
   languageName: node
   linkType: hard
 
@@ -2057,7 +2057,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:2.2.0"
     "@chromatic-com/storybook": "npm:^4.1.3"
-    "@runzipper/ui": "npm:^0.0.34"
+    "@runzipper/ui": "npm:^0.0.35"
     "@storybook/addon-a11y": "npm:^10.1.4"
     "@storybook/addon-docs": "npm:^10.1.4"
     "@storybook/addon-styling-webpack": "npm:^3.0.0"

@@ -9,6 +9,13 @@ const nextConfig: NextConfig = {
 	async redirects() {
 		return [{ source: '/', destination: '/compress', permanent: true }];
 	},
+	webpack: (config) => {
+		config.module.rules.push({
+			test: /\.md$/,
+			type: 'asset/source',
+		});
+		return config;
+	},
 };
 
 export default withVanillaExtract(nextConfig);

@@ -19,17 +19,6 @@ export const containerStyle = style({
 	},
 });
 
-export const dropboxContainerStyle = style({
-	display: 'flex',
-	flexDirection: 'column',
-	flexGrow: 1,
-	flexShrink: 1,
-	flexBasis: '100%',
-	gap: Theme.spacing[3],
-	transition: 'flex-basis 0.5s ease-in-out',
-	minHeight: 0,
-});
-
 const visible = keyframes({
 	'0%': { opacity: 0 },
 	'100%': { opacity: 1 },
@@ -41,7 +30,6 @@ export const tableContainerStyle = style({
 	height: '100%',
 	flexGrow: 1,
 	flexShrink: 1,
-	flexBasis: '50%',
 	minHeight: 0,
 	opacity: 0,
 	animation: `${visible} 0.5s ease-in-out`,
@@ -49,24 +37,62 @@ export const tableContainerStyle = style({
 	animationFillMode: 'forwards',
 });
 
-export const filedropStyle = style({
-	selectors: {
-		[`${dropboxContainerStyle}:has(~ ${tableContainerStyle}) &`]: {
-			flexGrow: 1,
-			aspectRatio: 'auto',
+globalStyle(`${tableContainerStyle} table`, {
+	'@media': {
+		'screen and (max-width:768px)': {
+			height: '40vh',
 		},
 	},
+});
+
+globalStyle(`${tableContainerStyle} tbody`, {
+	minHeight: 0,
+	flexBasis: 0,
+
 	'@media': {
-		'screen and (max-width:425px)': {
+		'screen and (max-width:768px)': {
+			flexBasis: 'auto',
+			maxHeight: '40vh',
+		},
+	},
+});
+
+export const dropboxContainerStyle = style({
+	display: 'flex',
+	flexDirection: 'column',
+	flexGrow: 1,
+	flexShrink: 1,
+	gap: Theme.spacing[3],
+	transition: 'flex-basis 0.5s ease-in-out',
+	minHeight: 0,
+
+	'@media': {
+		'screen and (max-width:768px)': {
+			flexGrow: 0,
+			flexShrink: 0,
+		},
+
+		'screen and (min-width:769px)': {
+			flexBasis: '100%',
+
+			selectors: {
+				[`&:has(~ ${tableContainerStyle})`]: {
+					flexGrow: 0,
+					flexBasis: '50%',
+				},
+			},
+		},
+	},
+});
+
+export const filedropStyle = style({
+	'@media': {
+		'screen and (max-width:768px)': {
 			aspectRatio: '1/1',
 			flexGrow: 0,
 			height: 'auto',
 		},
 	},
-});
-
-export const dropboxContainerHalfStyle = style({
-	flexBasis: '50%',
 });
 
 export const toggleStyle = style({

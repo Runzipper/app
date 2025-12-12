@@ -10,7 +10,6 @@ import {
 	buttonContainer,
 	compressButtonStyle,
 	containerStyle,
-	dropboxContainerHalfStyle,
 	dropboxContainerStyle,
 	filedropStyle,
 	tableContainerStyle,
@@ -50,9 +49,7 @@ export default function CompressPage() {
 
 	return (
 		<div className={containerStyle}>
-			<div
-				className={`${dropboxContainerStyle} ${selectedFileList ? dropboxContainerHalfStyle : ''}`}
-			>
+			<div className={dropboxContainerStyle}>
 				{error && (
 					<UI.Notification
 						type="warn"

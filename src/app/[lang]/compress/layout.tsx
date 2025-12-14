@@ -1,3 +1,6 @@
+'use client';
+
+import { useDictionary } from '@/context/dictionary';
 import { Typography } from '@runzipper/ui';
 import { containerStyle, descriptionStyle, titleStyle } from './layout.css';
 
@@ -6,6 +9,7 @@ export default function DecompressPageLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const dictionary = useDictionary();
 	return (
 		<div className={containerStyle}>
 			<Typography.Heading textType="h2" size="primary" className={titleStyle}>
@@ -16,9 +20,7 @@ export default function DecompressPageLayout({
 				className={descriptionStyle}
 				size="medium"
 			>
-				Easily compress and decompress your files with our free tool.
-				<br /> No software installation required.
-				<br /> Supports ZIP, GZIP.
+				{dictionary.compress.description}
 			</Typography.Regular>
 			{children}
 		</div>

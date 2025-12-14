@@ -1,5 +1,5 @@
+import { dictionaries } from '@/utils/dictionary';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-
 import Footer from '.';
 
 const meta = {
@@ -20,6 +20,13 @@ const meta = {
 			</div>
 		),
 	],
+
+	argTypes: {
+		lang: {
+			control: 'select',
+			options: Object.keys(dictionaries),
+		},
+	},
 	parameters: {
 		layout: 'fullscreen',
 	},
@@ -28,4 +35,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+	args: {
+		lang: 'kr',
+	},
+};

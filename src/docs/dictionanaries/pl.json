@@ -1,0 +1,36 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "Kompresuj i archiwizuj pliki bezpośrednio w przeglądarce z obsługą formatów ZIP, TAR i TAR.GZ. Bez przesyłania na serwer, bez instalacji i z pełną ochroną prywatności. Całe przetwarzanie kompresji odbywa się lokalnie na Twoim urządzeniu, zapewniając, że Twoje poufne pliki nigdy nie opuszczą komputera."
+	},
+	"compress": {
+		"heading": "Kompresuj pliki w przeglądarce",
+		"description": "Kompresuj pliki w przeglądarce bez instalowania programów. Wszystkie procesy kompresji są wykonywane w przeglądarce i żadne pliki nie są wysyłane na serwer.\nObsługiwane formaty plików: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Wystąpił błąd."
+		},
+		"preview": {
+			"title": "Podgląd plików",
+			"description": "Wybrane pliki zostaną skompresowane.",
+			"tableColumn": [
+				"Nazwa pliku",
+				"Rozmiar",
+				"Typ"
+			]
+		},
+		"submit": {
+			"idle": "Kompresuj",
+			"active": "Kompresowanie..."
+		}
+	},
+	"header": {
+		"decompress": "Dekompresuj",
+		"compress": "Kompresuj"
+	},
+	"footer": {
+		"termsOfService": "Warunki korzystania z usługi",
+		"privacyPolicy": "Polityka prywatności",
+		"contact": "Kontakt"
+	}
+}

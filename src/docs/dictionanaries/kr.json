@@ -1,0 +1,36 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "ZIP, TAR, TAR.GZ 형식을 지원하는 브라우저 기반 파일 압축 및 아카이브 도구입니다. 서버 업로드 없이, 설치 불필요하며, 완벽한 개인정보 보호를 제공합니다. 모든 압축 처리는 사용자의 기기에서 로컬로 이루어지므로 민감한 파일이 컴퓨터 밖으로 나가지 않습니다."
+	},
+	"compress": {
+		"heading": "Compress files on browser",
+		"description": "프로그램 설치 없이 브라우저에서 파일을 압축하세요. 모든 압축과정은 브라우저에서 이루어지며, 서버로 파일이 전송되지 않습니다.\n지원하는 파일 형식: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "문제가 발생했습니다."
+		},
+		"preview": {
+			"title": "파일 미리보기",
+			"description": "선택된 파일들이 압축됩니다.",
+			"tableColumn": [
+				"파일 이름",
+				"크기",
+				"유형"
+			]
+		},
+		"submit": {
+			"idle": "압축하기",
+			"active": "압축 중..."
+		}
+	},
+	"header": {
+		"decompress": "압축 해제 페이지로 가기",
+		"compress": "압축 페이지로 가기"
+	},
+	"footer": {
+		"termsOfService": "이용약관",
+		"privacyPolicy": "개인정보 처리방침",
+		"contact": "문의하기"
+	}
+}

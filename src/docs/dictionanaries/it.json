@@ -1,0 +1,36 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "Comprimi e archivia i tuoi file direttamente nel browser con supporto per i formati ZIP, TAR e TAR.GZ. Nessun caricamento sul server, nessuna installazione richiesta e protezione completa della privacy. Tutta l'elaborazione della compressione avviene localmente sul tuo dispositivo, garantendo che i tuoi file sensibili non lascino mai il tuo computer."
+	},
+	"compress": {
+		"heading": "Comprimi file nel browser",
+		"description": "Comprimi i file nel tuo browser senza installare alcun programma. Tutti i processi di compressione vengono eseguiti nel browser e nessun file viene inviato al server.\nFormati di file supportati: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Si è verificato un errore."
+		},
+		"preview": {
+			"title": "Anteprima file",
+			"description": "I file selezionati saranno compressi.",
+			"tableColumn": [
+				"Nome file",
+				"Dimensione",
+				"Tipo"
+			]
+		},
+		"submit": {
+			"idle": "Comprimi",
+			"active": "Compressione in corso..."
+		}
+	},
+	"header": {
+		"decompress": "Decomprimi",
+		"compress": "Comprimi"
+	},
+	"footer": {
+		"termsOfService": "Termini di servizio",
+		"privacyPolicy": "Informativa sulla privacy",
+		"contact": "Contattaci"
+	}
+}

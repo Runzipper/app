@@ -1,0 +1,36 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "Compressez et archivez vos fichiers directement dans votre navigateur avec prise en charge des formats ZIP, TAR et TAR.GZ. Aucun téléchargement sur serveur, aucune installation requise et protection complète de la confidentialité. Tout le traitement de compression s'effectue localement sur votre appareil, garantissant que vos fichiers sensibles ne quittent jamais votre ordinateur."
+	},
+	"compress": {
+		"heading": "Compresser des fichiers dans le navigateur",
+		"description": "Compressez des fichiers dans votre navigateur sans installer de programmes. Tous les processus de compression sont effectués dans le navigateur et aucun fichier n'est envoyé au serveur.\nFormats de fichiers pris en charge : ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Une erreur s'est produite."
+		},
+		"preview": {
+			"title": "Aperçu des fichiers",
+			"description": "Les fichiers sélectionnés seront compressés.",
+			"tableColumn": [
+				"Nom du fichier",
+				"Taille",
+				"Type"
+			]
+		},
+		"submit": {
+			"idle": "Compresser",
+			"active": "Compression en cours..."
+		}
+	},
+	"header": {
+		"decompress": "Décompresser",
+		"compress": "Compresser"
+	},
+	"footer": {
+		"termsOfService": "Conditions d'utilisation",
+		"privacyPolicy": "Politique de confidentialité",
+		"contact": "Nous contacter"
+	}
+}

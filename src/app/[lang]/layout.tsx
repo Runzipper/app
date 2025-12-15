@@ -6,24 +6,39 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { bodyStyle } from './layout.css';
 
-export const metadata: Metadata = {
-	title: 'Runzipper',
-	description:
-		'Compress and archive your files directly in your browser with support for ZIP, TAR, and TAR.GZ formats. No server uploads, no installation required, and complete privacy protection. All compression processing happens locally on your device, ensuring your sensitive files never leave your computer.',
-	manifest: '/site.webmanifest',
-	appleWebApp: {
-		title: 'Runzipper',
-	},
-	icons: {
-		icon: [
-			{ url: '/favicon.ico' },
-			{ url: '/favicon.svg', type: 'image/svg+xml' },
-			{ url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-		],
-		apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
-		shortcut: '/favicon.ico',
-	},
+type MetadataProps = {
+	params: Promise<{ lang: string }>;
 };
+
+export async function generateMetadata({
+	params,
+}: MetadataProps): Promise<Metadata> {
+	const locale = (await params).lang;
+
+	if (!hasLocale(locale)) {
+		return {};
+	}
+
+	const dictionary = await dictionaries[locale]();
+
+	return {
+		title: 'Runzipper',
+		description: dictionary.meta.description,
+		manifest: '/site.webmanifest',
+		appleWebApp: {
+			title: 'Runzipper',
+		},
+		icons: {
+			icon: [
+				{ url: '/favicon.ico' },
+				{ url: '/favicon.svg', type: 'image/svg+xml' },
+				{ url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+			],
+			apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
+			shortcut: '/favicon.ico',
+		},
+	};
+}
 
 export async function generateStaticParams() {
 	return Object.keys(dictionaries).map((lang) => ({ lang }));

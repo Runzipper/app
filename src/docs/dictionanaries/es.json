@@ -1,0 +1,43 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "Comprima y archive sus archivos directamente en su navegador con soporte para formatos ZIP, TAR y TAR.GZ. Sin cargas al servidor, sin instalación requerida y protección completa de la privacidad. Todo el procesamiento de compresión se realiza localmente en su dispositivo, asegurando que sus archivos confidenciales nunca salgan de su computadora."
+	},
+	"compress": {
+		"heading": "Comprimir archivos en el navegador",
+		"description": "Comprima archivos en su navegador sin instalar ningún programa.\nTodos los procesos de compresión se realizan en el navegador y no se envían archivos al servidor.\nFormatos de archivo compatibles: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Ha ocurrido un error."
+		},
+		"preview": {
+			"title": "Vista previa de archivos",
+			"description": "Los archivos seleccionados serán comprimidos.",
+			"tableColumn": [
+				"Nombre del archivo",
+				"Tamaño",
+				"Tipo"
+			]
+		},
+		"submit": {
+			"idle": "Comprimir",
+			"active": "Comprimiendo..."
+		},
+		"file": "Archivo",
+		"directory": "Directorio",
+		"fileDrop": {
+			"title": "Arrastra y suelta tus archivos aquí",
+			"description": "O haz clic para seleccionar archivos de tu computadora",
+			"button": "Seleccionar archivos"
+		}
+	},
+	"header": {
+		"decompress": "Descomprimir",
+		"compress": "Comprimir"
+	},
+	"footer": {
+		"termsOfService": "Términos de servicio",
+		"privacyPolicy": "Política de privacidad",
+		"contact": "Contacto"
+	}
+}

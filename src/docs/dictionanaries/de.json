@@ -1,0 +1,43 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "Komprimieren und archivieren Sie Ihre Dateien direkt in Ihrem Browser mit Unterstützung für ZIP-, TAR- und TAR.GZ-Formate. Keine Server-Uploads, keine Installation erforderlich und vollständiger Datenschutz. Die gesamte Komprimierung erfolgt lokal auf Ihrem Gerät, sodass Ihre vertraulichen Dateien Ihren Computer nie verlassen."
+	},
+	"compress": {
+		"heading": "Dateien im Browser komprimieren",
+		"description": "Komprimieren Sie Dateien in Ihrem Browser, ohne Programme zu installieren.\nAlle Komprimierungsprozesse werden im Browser durchgeführt und keine Dateien werden an den Server gesendet.\nUnterstützte Dateiformate: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Ein Fehler ist aufgetreten."
+		},
+		"preview": {
+			"title": "Dateivorschau",
+			"description": "Ausgewählte Dateien werden komprimiert.",
+			"tableColumn": [
+				"Dateiname",
+				"Größe",
+				"Typ"
+			]
+		},
+		"submit": {
+			"idle": "Komprimieren",
+			"active": "Wird komprimiert..."
+		},
+		"file": "Datei",
+		"directory": "Verzeichnis",
+		"fileDrop": {
+			"title": "Ziehen Sie Ihre Dateien hierher",
+			"description": "Oder klicken Sie, um Dateien von Ihrem Computer auszuwählen",
+			"button": "Dateien auswählen"
+		}
+	},
+	"header": {
+		"decompress": "Entpacken",
+		"compress": "Komprimieren"
+	},
+	"footer": {
+		"termsOfService": "Nutzungsbedingungen",
+		"privacyPolicy": "Datenschutzrichtlinie",
+		"contact": "Kontakt"
+	}
+}

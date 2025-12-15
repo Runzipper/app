@@ -1,9 +1,7 @@
-import Footer from '@/components/layouts/Footer';
-import Header from '@/components/layouts/Header';
 import '@/styles/globals.css';
 import '@/styles/index.css';
+
 import type { Metadata } from 'next';
-import { bodyStyle } from './layout.css';
 
 export const metadata: Metadata = {
 	title: 'Runzipper',
@@ -24,18 +22,6 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
-	return (
-		<html lang="ko">
-			<body className={bodyStyle}>
-				<Header />
-				{children}
-				<Footer />
-			</body>
-		</html>
-	);
+export default async function RootLayout({ children }: LayoutProps<'/'>) {
+	return <>{children}</>;
 }

@@ -1,6 +1,7 @@
 import LegalPopover from '@/components/legal/LegalPopover';
 import privacyPolicy from '@/docs/legal/PRIVACY_POLICY.md';
 import termsOfService from '@/docs/legal/TERMS_OF_SERVICE.md';
+import { getDictionary, type Locale } from '@/utils/dictionary';
 import { Typography } from '@runzipper/ui';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -11,24 +12,30 @@ import {
 	textStyle,
 } from './footer.css';
 
-const Footer = () => {
+type FooterProps = {
+	lang: Locale;
+};
+
+const Footer = async ({ lang }: FooterProps) => {
+	const dictionary = await getDictionary(lang);
+
 	return (
 		<>
 			<footer className={footerStyle}>
 				<nav className={navigationStyle}>
 					<button type="button" popoverTarget="terms-popover">
 						<Typography.Regular textType="span" className={textStyle}>
-							이용약관
+							{dictionary.footer.termsOfService}
 						</Typography.Regular>
 					</button>
 					<button type="button" popoverTarget="privacy-popover">
 						<Typography.Regular textType="span" className={textStyle}>
-							개인정보 처리방침
+							{dictionary.footer.privacyPolicy}
 						</Typography.Regular>
 					</button>
 					<Link href="mailto:rlaqhguse@gmail.com">
 						<Typography.Regular textType="span" className={textStyle}>
-							문의하기
+							{dictionary.footer.contact}
 						</Typography.Regular>
 					</Link>
 				</nav>

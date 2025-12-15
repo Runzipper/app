@@ -1,0 +1,43 @@
+{
+	"$schema": "./dictionary.schema.json",
+	"meta": {
+		"description": "直接在浏览器中压缩和归档文件，支持ZIP、TAR和TAR.GZ格式。无需上传服务器，无需安装，完全保护隐私。所有压缩处理都在您的设备上本地进行，确保您的敏感文件永远不会离开您的计算机。"
+	},
+	"compress": {
+		"heading": "在浏览器中压缩文件",
+		"description": "无需安装程序即可在浏览器中压缩文件。\n所有压缩过程都在浏览器中进行，文件不会发送到服务器。\n支持的文件格式：ZIP、TAR、TAR.GZ",
+
+		"warning": {
+			"title": "发生了错误。"
+		},
+		"preview": {
+			"title": "文件预览",
+			"description": "所选文件将被压缩。",
+			"tableColumn": [
+				"文件名",
+				"大小",
+				"类型"
+			]
+		},
+		"submit": {
+			"idle": "压缩",
+			"active": "压缩中..."
+		},
+		"file": "文件",
+		"directory": "目录",
+		"fileDrop": {
+			"title": "将文件拖放到此处",
+			"description": "或点击从计算机中选择文件",
+			"button": "选择文件"
+		}
+	},
+	"header": {
+		"decompress": "解压",
+		"compress": "压缩"
+	},
+	"footer": {
+		"termsOfService": "服务条款",
+		"privacyPolicy": "隐私政策",
+		"contact": "联系我们"
+	}
+}

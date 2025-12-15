@@ -1,3 +1,4 @@
+import { getDictionary, type Locale } from '@/utils/dictionary';
 import { Typography, UI } from '@runzipper/ui';
 import Link from 'next/link';
 import {
@@ -7,7 +8,13 @@ import {
 	logoStyle,
 } from './header.css';
 
-const Header = () => {
+type HeaderProps = {
+	lang: Locale;
+};
+
+const Header = async ({ lang }: HeaderProps) => {
+	const dictionary = await getDictionary(lang);
+
 	return (
 		<>
 			<header className={headerStyle}>
@@ -18,7 +25,7 @@ const Header = () => {
 				<Link href="/unzip">
 					<UI.Button className={buttonStyle}>
 						<Typography.Bold textType="span" size="small">
-							압축 해제 페이지로 가기
+							{dictionary.header.decompress}
 						</Typography.Bold>
 					</UI.Button>
 				</Link>

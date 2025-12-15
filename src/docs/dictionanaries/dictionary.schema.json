@@ -1,0 +1,172 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Dictionary Schema",
+	"description": "Schema for application dictionary files",
+	"type": "object",
+	"properties": {
+		"meta": {
+			"type": "object",
+			"properties": {
+				"description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"description"
+			]
+		},
+		"compress": {
+			"type": "object",
+			"description": "Compression feature translations",
+			"properties": {
+				"heading": {
+					"type": "string",
+					"description": "Main heading for compress feature"
+				},
+				"description": {
+					"type": "string",
+					"description": "Description of compress feature"
+				},
+				"warning": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "Warning message title"
+						}
+					},
+					"required": [
+						"title"
+					]
+				},
+				"preview": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "Preview section title"
+						},
+						"description": {
+							"type": "string",
+							"description": "Preview section description"
+						},
+						"tableColumn": {
+							"type": "array",
+							"description": "Table column headers",
+							"items": {
+								"type": "string"
+							},
+							"minItems": 3,
+							"maxItems": 3
+						}
+					},
+					"required": [
+						"title",
+						"description",
+						"tableColumn"
+					]
+				},
+				"submit": {
+					"type": "object",
+					"properties": {
+						"idle": {
+							"type": "string",
+							"description": "Submit button text in idle state"
+						},
+						"active": {
+							"type": "string",
+							"description": "Submit button text in active state"
+						}
+					},
+					"required": [
+						"idle",
+						"active"
+					]
+				},
+				"file": {
+					"type": "string",
+					"description": "File select mode label"
+				},
+				"directory": {
+					"type": "string",
+					"description": "Directory select mode label"
+				},
+				"fileDrop": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "File drop section title"
+						},
+						"description": {
+							"type": "string",
+							"description": "File drop section description"
+						},
+						"button": {
+							"type": "string",
+							"description": "File drop section button text"
+						}
+					},
+					"required": [
+						"title",
+						"description",
+						"button"
+					]
+				}
+			},
+			"required": [
+				"heading",
+				"description",
+				"warning",
+				"preview",
+				"submit",
+				"file",
+				"directory",
+				"fileDrop"
+			]
+		},
+		"header": {
+			"decompress": {
+				"type": "string",
+				"description": "Link text for decompress feature"
+			},
+			"compress": {
+				"type": "string",
+				"description": "Link text for compress feature"
+			},
+			"required": [
+				"decompress",
+				"compress"
+			]
+		},
+		"footer": {
+			"type": "object",
+			"description": "Footer section translations",
+			"properties": {
+				"termsOfService": {
+					"type": "string",
+					"description": "Terms of service link text"
+				},
+				"privacyPolicy": {
+					"type": "string",
+					"description": "Privacy policy link text"
+				},
+				"contact": {
+					"type": "string",
+					"description": "Contact link text"
+				}
+			},
+			"required": [
+				"termsOfService",
+				"privacyPolicy",
+				"contact"
+			]
+		}
+	},
+	"required": [
+		"meta",
+		"compress",
+		"header",
+		"footer"
+	]
+}

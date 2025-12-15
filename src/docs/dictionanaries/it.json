@@ -5,7 +5,7 @@
 	},
 	"compress": {
 		"heading": "Comprimi file nel browser",
-		"description": "Comprimi i file nel tuo browser senza installare alcun programma. Tutti i processi di compressione vengono eseguiti nel browser e nessun file viene inviato al server.\nFormati di file supportati: ZIP, TAR, TAR.GZ",
+		"description": "Comprimi i file nel tuo browser senza installare alcun programma.\nTutti i processi di compressione vengono eseguiti nel browser e nessun file viene inviato al server.\nFormati di file supportati: ZIP, TAR, TAR.GZ",
 
 		"warning": {
 			"title": "Si è verificato un errore."
@@ -22,6 +22,13 @@
 		"submit": {
 			"idle": "Comprimi",
 			"active": "Compressione in corso..."
+		},
+		"file": "File",
+		"directory": "Directory",
+		"fileDrop": {
+			"title": "Trascina e rilascia i tuoi file qui",
+			"description": "Oppure clicca per selezionare i file dal tuo computer",
+			"button": "Seleziona file"
 		}
 	},
 	"header": {

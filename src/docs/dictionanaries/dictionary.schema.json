@@ -82,6 +82,36 @@
 						"idle",
 						"active"
 					]
+				},
+				"file": {
+					"type": "string",
+					"description": "File select mode label"
+				},
+				"directory": {
+					"type": "string",
+					"description": "Directory select mode label"
+				},
+				"fileDrop": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "File drop section title"
+						},
+						"description": {
+							"type": "string",
+							"description": "File drop section description"
+						},
+						"button": {
+							"type": "string",
+							"description": "File drop section button text"
+						}
+					},
+					"required": [
+						"title",
+						"description",
+						"button"
+					]
 				}
 			},
 			"required": [
@@ -89,7 +119,10 @@
 				"description",
 				"warning",
 				"preview",
-				"submit"
+				"submit",
+				"file",
+				"directory",
+				"fileDrop"
 			]
 		},
 		"header": {

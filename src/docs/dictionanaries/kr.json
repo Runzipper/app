@@ -5,7 +5,7 @@
 	},
 	"compress": {
 		"heading": "Compress files on browser",
-		"description": "프로그램 설치 없이 브라우저에서 파일을 압축하세요. 모든 압축과정은 브라우저에서 이루어지며, 서버로 파일이 전송되지 않습니다.\n지원하는 파일 형식: ZIP, TAR, TAR.GZ",
+		"description": "프로그램 설치 없이 브라우저에서 파일을 압축하세요.\n모든 압축과정은 브라우저에서 이루어지며, 서버로 파일이 전송되지 않습니다.\n지원하는 파일 형식: ZIP, TAR, TAR.GZ",
 
 		"warning": {
 			"title": "문제가 발생했습니다."
@@ -22,6 +22,13 @@
 		"submit": {
 			"idle": "압축하기",
 			"active": "압축 중..."
+		},
+		"file": "파일",
+		"directory": "폴더",
+		"fileDrop": {
+			"title": "여기에 파일을 드래그 앤 드롭하세요",
+			"description": "또는 클릭하여 컴퓨터에서 파일을 선택하세요",
+			"button": "파일 선택"
 		}
 	},
 	"header": {

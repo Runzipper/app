@@ -5,7 +5,7 @@
 	},
 	"compress": {
 		"heading": "Compresser des fichiers dans le navigateur",
-		"description": "Compressez des fichiers dans votre navigateur sans installer de programmes. Tous les processus de compression sont effectués dans le navigateur et aucun fichier n'est envoyé au serveur.\nFormats de fichiers pris en charge : ZIP, TAR, TAR.GZ",
+		"description": "Compressez des fichiers dans votre navigateur sans installer de programmes.\nTous les processus de compression sont effectués dans le navigateur et aucun fichier n'est envoyé au serveur.\nFormats de fichiers pris en charge : ZIP, TAR, TAR.GZ",
 
 		"warning": {
 			"title": "Une erreur s'est produite."
@@ -22,6 +22,13 @@
 		"submit": {
 			"idle": "Compresser",
 			"active": "Compression en cours..."
+		},
+		"file": "Fichier",
+		"directory": "Répertoire",
+		"fileDrop": {
+			"title": "Glissez et déposez vos fichiers ici",
+			"description": "Ou cliquez pour sélectionner des fichiers depuis votre ordinateur",
+			"button": "Sélectionner des fichiers"
 		}
 	},
 	"header": {

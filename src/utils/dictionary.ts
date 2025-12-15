@@ -1,5 +1,5 @@
 export const dictionaries = {
-	kr: () =>
+	ko: () =>
 		import('@/docs/dictionanaries/kr.json').then((module) => module.default),
 	en: () =>
 		import('@/docs/dictionanaries/en.json').then((module) => module.default),

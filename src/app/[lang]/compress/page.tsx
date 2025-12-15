@@ -63,8 +63,14 @@ export default function CompressPage() {
 				)}
 				<UI.Toggle
 					value={fileSelectMode}
-					option1={FILE_SELECT_MODE.file}
-					option2={FILE_SELECT_MODE.directory}
+					option1={{
+						label: dictionary.compress.file,
+						value: FILE_SELECT_MODE.file.value,
+					}}
+					option2={{
+						label: dictionary.compress.directory,
+						value: FILE_SELECT_MODE.directory.value,
+					}}
 					onChange={handleFileSelectMode}
 					className={toggleStyle}
 				/>
@@ -73,6 +79,9 @@ export default function CompressPage() {
 					multiple={fileSelectMode !== 'directory'}
 					onDropFile={handleFile}
 					className={filedropStyle}
+					title={dictionary.compress.fileDrop.title}
+					description={dictionary.compress.fileDrop.description}
+					buttonText={dictionary.compress.fileDrop.button}
 				/>
 			</div>
 			{selectedFileList && (

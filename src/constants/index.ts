@@ -23,3 +23,8 @@ export const COMPRESSION_MODE = {
 		value: 'tar',
 	},
 } as const;
+
+export const PATH = {
+	COMPRESS: '/compress',
+	DECOMPRESS: '/decompress',
+} as const;

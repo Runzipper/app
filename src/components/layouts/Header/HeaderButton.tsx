@@ -1,5 +1,6 @@
 'use client';
 
+import { PATH } from '@/constants';
 import type { Dictionary } from '@/utils/dictionary';
 import { Typography, UI } from '@runzipper/ui';
 import Link from 'next/link';
@@ -9,11 +10,6 @@ import { buttonStyle } from './header.css';
 type HeaderButtonProps = {
 	dictionary: Dictionary;
 };
-
-const PATH = {
-	COMPRESS: '/compress',
-	DECOMPRESS: '/decompress',
-} as const;
 
 export function HeaderButton({ dictionary }: HeaderButtonProps) {
 	const pathname = usePathname();

@@ -31,6 +31,33 @@
 			"button": "Select Files"
 		}
 	},
+	"decompress": {
+		"heading": "Decompress files on browser",
+		"description": "Decompress files in your browser without installing any programs.\nAll decompression processes are performed in the browser, and no files are sent to the server.\nSupported file formats: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "An error has occurred."
+		},
+		"preview": {
+			"title": "File preview",
+			"description": "The contents of the selected compressed file will be extracted.",
+			"tableColumn": [
+				"File name",
+				"Size",
+				"Type"
+			]
+		},
+		"submit": {
+			"idle": "Decompress",
+			"active": "Decompressing..."
+		},
+		"file": "File",
+		"fileDrop": {
+			"title": "Drag and drop your compressed file here",
+			"description": "Or click to select a compressed file from your computer",
+			"button": "Select Files"
+		}
+	},
 	"header": {
 		"decompress": "Decompress",
 		"compress": "Compress"

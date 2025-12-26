@@ -31,6 +31,33 @@
 			"button": "파일 선택"
 		}
 	},
+	"decompress": {
+		"heading": "Decompress files on browser",
+		"description": "프로그램 설치 없이 브라우저에서 파일을 압축 해제하세요.\n모든 압축 해제 과정은 브라우저에서 이루어지며, 서버로 파일이 전송되지 않습니다.\n지원하는 파일 형식: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "문제가 발생했습니다."
+		},
+		"preview": {
+			"title": "파일 미리보기",
+			"description": "선택된 압축 파일의 내용이 해제됩니다.",
+			"tableColumn": [
+				"파일 이름",
+				"크기",
+				"유형"
+			]
+		},
+		"submit": {
+			"idle": "압축 해제하기",
+			"active": "압축 해제 중..."
+		},
+		"file": "파일",
+		"fileDrop": {
+			"title": "여기에 압축 파일을 드래그 앤 드롭하세요",
+			"description": "또는 클릭하여 컴퓨터에서 압축 파일을 선택하세요",
+			"button": "파일 선택"
+		}
+	},
 	"header": {
 		"decompress": "압축 해제 페이지로 가기",
 		"compress": "압축 페이지로 가기"

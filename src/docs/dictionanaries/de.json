@@ -31,6 +31,33 @@
 			"button": "Dateien auswählen"
 		}
 	},
+	"decompress": {
+		"heading": "Dateien im Browser entpacken",
+		"description": "Entpacken Sie Dateien in Ihrem Browser, ohne Programme zu installieren.\nAlle Entpackungsprozesse werden im Browser durchgeführt und keine Dateien werden an den Server gesendet.\nUnterstützte Dateiformate: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Ein Fehler ist aufgetreten."
+		},
+		"preview": {
+			"title": "Dateivorschau",
+			"description": "Der Inhalt der ausgewählten komprimierten Datei wird extrahiert.",
+			"tableColumn": [
+				"Dateiname",
+				"Größe",
+				"Typ"
+			]
+		},
+		"submit": {
+			"idle": "Entpacken",
+			"active": "Wird entpackt..."
+		},
+		"file": "Datei",
+		"fileDrop": {
+			"title": "Ziehen Sie Ihre komprimierte Datei hierher",
+			"description": "Oder klicken Sie, um eine komprimierte Datei von Ihrem Computer auszuwählen",
+			"button": "Dateien auswählen"
+		}
+	},
 	"header": {
 		"decompress": "Entpacken",
 		"compress": "Komprimieren"

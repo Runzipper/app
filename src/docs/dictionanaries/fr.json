@@ -31,6 +31,33 @@
 			"button": "Sélectionner des fichiers"
 		}
 	},
+	"decompress": {
+		"heading": "Décompresser des fichiers dans le navigateur",
+		"description": "Décompressez des fichiers dans votre navigateur sans installer de programmes.\nTous les processus de décompression sont effectués dans le navigateur et aucun fichier n'est envoyé au serveur.\nFormats de fichiers pris en charge : ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Une erreur s'est produite."
+		},
+		"preview": {
+			"title": "Aperçu des fichiers",
+			"description": "Le contenu du fichier compressé sélectionné sera extrait.",
+			"tableColumn": [
+				"Nom du fichier",
+				"Taille",
+				"Type"
+			]
+		},
+		"submit": {
+			"idle": "Décompresser",
+			"active": "Décompression en cours..."
+		},
+		"file": "Fichier",
+		"fileDrop": {
+			"title": "Glissez et déposez votre fichier compressé ici",
+			"description": "Ou cliquez pour sélectionner un fichier compressé depuis votre ordinateur",
+			"button": "Sélectionner des fichiers"
+		}
+	},
 	"header": {
 		"decompress": "Décompresser",
 		"compress": "Compresser"

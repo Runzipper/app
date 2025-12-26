@@ -31,6 +31,33 @@
 			"button": "Wybierz pliki"
 		}
 	},
+	"decompress": {
+		"heading": "Dekompresuj pliki w przeglądarce",
+		"description": "Dekompresuj pliki w przeglądarce bez instalowania programów.\nWszystkie procesy dekompresji są wykonywane w przeglądarce i żadne pliki nie są wysyłane na serwer.\nObsługiwane formaty plików: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Wystąpił błąd."
+		},
+		"preview": {
+			"title": "Podgląd plików",
+			"description": "Zawartość wybranego skompresowanego pliku zostanie wyodrębniona.",
+			"tableColumn": [
+				"Nazwa pliku",
+				"Rozmiar",
+				"Typ"
+			]
+		},
+		"submit": {
+			"idle": "Dekompresuj",
+			"active": "Dekompresowanie..."
+		},
+		"file": "Plik",
+		"fileDrop": {
+			"title": "Przeciągnij i upuść skompresowany plik tutaj",
+			"description": "Lub kliknij, aby wybrać skompresowany plik z komputera",
+			"button": "Wybierz pliki"
+		}
+	},
 	"header": {
 		"decompress": "Dekompresuj",
 		"compress": "Kompresuj"

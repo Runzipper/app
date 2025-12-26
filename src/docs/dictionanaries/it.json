@@ -31,6 +31,33 @@
 			"button": "Seleziona file"
 		}
 	},
+	"decompress": {
+		"heading": "Decomprimi file nel browser",
+		"description": "Decomprimi i file nel tuo browser senza installare alcun programma.\nTutti i processi di decompressione vengono eseguiti nel browser e nessun file viene inviato al server.\nFormati di file supportati: ZIP, TAR, TAR.GZ",
+
+		"warning": {
+			"title": "Si è verificato un errore."
+		},
+		"preview": {
+			"title": "Anteprima file",
+			"description": "Il contenuto del file compresso selezionato verrà estratto.",
+			"tableColumn": [
+				"Nome file",
+				"Dimensione",
+				"Tipo"
+			]
+		},
+		"submit": {
+			"idle": "Decomprimi",
+			"active": "Decompressione in corso..."
+		},
+		"file": "File",
+		"fileDrop": {
+			"title": "Trascina e rilascia il tuo file compresso qui",
+			"description": "Oppure clicca per selezionare un file compresso dal tuo computer",
+			"button": "Seleziona file"
+		}
+	},
 	"header": {
 		"decompress": "Decomprimi",
 		"compress": "Comprimi"

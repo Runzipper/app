@@ -2,7 +2,7 @@
 
 import { COMPRESSION_MODE, FILE_SELECT_MODE } from '@/constants';
 import { useDictionary } from '@/context/dictionary';
-import useCompress from '@/hooks/useZipCompress';
+import useCompress from '@/hooks/useCompress';
 import type { CompressionMode, FileSelectMode } from '@/types/compress';
 import { extractMetaDataFromFileList } from '@/utils/format';
 import { Icon, Typography, UI } from '@runzipper/ui';

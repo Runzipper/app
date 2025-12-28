@@ -20,7 +20,9 @@ import {
 
 export default function CompressPage() {
 	const dictionary = useDictionary();
-	const [fileSelectMode, setFileSelectMode] = useState<FileSelectMode>('file');
+	const [fileSelectMode, setFileSelectMode] = useState<FileSelectMode>(
+		FILE_SELECT_MODE.file.value,
+	);
 	const [compressionMode, setCompressionMode] = useState<CompressionMode>(
 		COMPRESSION_MODE.zip,
 	);
@@ -49,6 +51,17 @@ export default function CompressPage() {
 		? extractMetaDataFromFileList(selectedFileList)
 		: [];
 
+	const fileSelectModeOptions = [
+		{
+			label: dictionary.compress.file,
+			value: FILE_SELECT_MODE.file.value,
+		},
+		{
+			label: dictionary.compress.directory,
+			value: FILE_SELECT_MODE.directory.value,
+		},
+	] as const;
+
 	if (!dictionary) return null;
 
 	return (
@@ -63,20 +76,13 @@ export default function CompressPage() {
 				)}
 				<UI.Toggle
 					value={fileSelectMode}
-					option1={{
-						label: dictionary.compress.file,
-						value: FILE_SELECT_MODE.file.value,
-					}}
-					option2={{
-						label: dictionary.compress.directory,
-						value: FILE_SELECT_MODE.directory.value,
-					}}
+					options={fileSelectModeOptions}
 					onChange={handleFileSelectMode}
 					className={toggleStyle}
 				/>
 				<UI.FileDrop
-					allowDirectory={fileSelectMode === 'directory'}
-					multiple={fileSelectMode !== 'directory'}
+					allowDirectory={fileSelectMode === FILE_SELECT_MODE.directory.value}
+					multiple={fileSelectMode !== FILE_SELECT_MODE.directory.value}
 					onDropFile={handleFile}
 					className={filedropStyle}
 					title={dictionary.compress.fileDrop.title}

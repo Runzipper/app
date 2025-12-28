@@ -13,7 +13,7 @@ export default function DecompressPageLayout({
 	return (
 		<div className={containerStyle}>
 			<Typography.Heading textType="h2" size="primary" className={titleStyle}>
-				Compress files on browser
+				{dictionary.compress.heading}
 			</Typography.Heading>
 			<Typography.Regular
 				textType="p"

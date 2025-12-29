@@ -23,7 +23,8 @@ const useDecompress = (): [
 			const fileData = await extractFileDataFromFileList(fileList);
 			const directoryName = Object.keys(fileData)[0].split('.')[0];
 			const compressedData = Object.values(fileData)[0];
-			const fileExtension = Object.keys(fileData)[0].split('.').pop();
+const fileName = Object.keys(fileData)[0];
+const fileExtension = fileName.includes('.') ? fileName.split('.').pop() : '';
 
 			let decompressedFiles: Record<string, Uint8Array>;
 

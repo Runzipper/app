@@ -31,6 +31,33 @@
 			"button": "选择文件"
 		}
 	},
+	"decompress": {
+		"heading": "在浏览器中解压文件",
+		"description": "无需安装程序即可在浏览器中解压文件。\n所有解压过程都在浏览器中进行，文件不会发送到服务器。\n支持的文件格式：ZIP、TAR、TAR.GZ",
+
+		"warning": {
+			"title": "发生了错误。"
+		},
+		"preview": {
+			"title": "文件预览",
+			"description": "所选压缩文件的内容将被解压。",
+			"tableColumn": [
+				"文件名",
+				"大小",
+				"类型"
+			]
+		},
+		"submit": {
+			"idle": "解压",
+			"active": "解压中..."
+		},
+		"file": "文件",
+		"fileDrop": {
+			"title": "将压缩文件拖放到此处",
+			"description": "或点击从计算机中选择压缩文件",
+			"button": "选择文件"
+		}
+	},
 	"header": {
 		"decompress": "解压",
 		"compress": "压缩"

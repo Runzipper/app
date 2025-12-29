@@ -20,6 +20,7 @@ export const dictionaries = {
 } as const;
 
 export type Locale = keyof typeof dictionaries;
+export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
 
 export const hasLocale = (locale: string): locale is Locale => {
 	return Object.keys(dictionaries).includes(locale);

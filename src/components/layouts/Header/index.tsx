@@ -2,11 +2,11 @@ import { getDictionary, type Locale } from '@/utils/dictionary';
 import { Typography, UI } from '@runzipper/ui';
 import Link from 'next/link';
 import {
-	buttonStyle,
 	clearfixStyle,
 	headerStyle,
 	logoStyle,
 } from './header.css';
+import { HeaderButton } from './HeaderButton';
 
 type HeaderProps = {
 	lang: Locale;
@@ -22,13 +22,7 @@ const Header = async ({ lang }: HeaderProps) => {
 					<UI.Logo type="primary" />
 					<Typography.Bold textType="h1">Runzipper</Typography.Bold>
 				</Link>
-				<Link href="/unzip">
-					<UI.Button className={buttonStyle}>
-						<Typography.Bold textType="span" size="small">
-							{dictionary.header.decompress}
-						</Typography.Bold>
-					</UI.Button>
-				</Link>
+				<HeaderButton dictionary={dictionary} />
 			</header>
 			<div className={clearfixStyle} />
 		</>

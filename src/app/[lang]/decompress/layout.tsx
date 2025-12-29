@@ -13,14 +13,14 @@ export default function DecompressPageLayout({
 	return (
 		<div className={containerStyle}>
 			<Typography.Heading textType="h2" size="primary" className={titleStyle}>
-				{dictionary.compress.heading}
+				{dictionary.decompress.heading}
 			</Typography.Heading>
 			<Typography.Regular
 				textType="p"
 				className={descriptionStyle}
 				size="medium"
 			>
-				{dictionary.compress.description}
+				{dictionary.decompress.description}
 			</Typography.Regular>
 			{children}
 		</div>

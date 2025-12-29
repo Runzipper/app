@@ -1,5 +1,6 @@
 {
 	"name": "Runzipper",
+	"description": "Runzipper allows you to compress and decompress files and directories.",
 	"short_name": "Rzipper",
 	"icons": [
 		{
@@ -17,5 +18,6 @@
 	],
 	"theme_color": "#137FEC",
 	"background_color": "#137FEC",
-	"display": "standalone"
+	"display": "standalone",
+	"start_url": "/compress"
 }

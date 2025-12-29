@@ -1,5 +1,6 @@
 import type { CompressionMode } from '@/types/compress';
 import { compressTar, compressTarGz, compressZip } from '@/utils/compress';
+import { extractFileDataFromFileList } from '@/utils/decompress';
 import { useState } from 'react';
 
 const useCompress = (
@@ -14,26 +15,7 @@ const useCompress = (
 
 		try {
 			// FileList를 객체로 변환
-			const fileData: Record<string, Uint8Array> = {};
-
-			// 모든 파일을 비동기로 읽기
-			const fileReadPromises = Array.from(fileList).map((file) => {
-				return new Promise<void>((resolve, reject) => {
-					const reader = new FileReader();
-					reader.onload = (e) => {
-						const arrayBuffer = e.target?.result as ArrayBuffer;
-						// 파일의 상대 경로 유지
-						const fileName = file.webkitRelativePath || file.name;
-						fileData[fileName] = new Uint8Array(arrayBuffer);
-						resolve();
-					};
-					reader.onerror = () => reject(reader.error);
-					reader.readAsArrayBuffer(file);
-				});
-			});
-
-			// 모든 파일 읽기 완료 대기
-			await Promise.all(fileReadPromises);
+			const fileData = await extractFileDataFromFileList(fileList);
 
 			let url = '';
 

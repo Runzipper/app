@@ -125,6 +125,111 @@
 				"fileDrop"
 			]
 		},
+		"decompress": {
+			"type": "object",
+			"description": "Decompression feature translations",
+			"properties": {
+				"heading": {
+					"type": "string",
+					"description": "Main heading for decompress feature"
+				},
+				"description": {
+					"type": "string",
+					"description": "Description of decompress feature"
+				},
+				"warning": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "Warning message title"
+						}
+					},
+					"required": [
+						"title"
+					]
+				},
+				"preview": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "Preview section title"
+						},
+						"description": {
+							"type": "string",
+							"description": "Preview section description"
+						},
+						"tableColumn": {
+							"type": "array",
+							"description": "Table column headers",
+							"items": {
+								"type": "string"
+							},
+							"minItems": 3,
+							"maxItems": 3
+						}
+					},
+					"required": [
+						"title",
+						"description",
+						"tableColumn"
+					]
+				},
+				"submit": {
+					"type": "object",
+					"properties": {
+						"idle": {
+							"type": "string",
+							"description": "Submit button text in idle state"
+						},
+						"active": {
+							"type": "string",
+							"description": "Submit button text in active state"
+						}
+					},
+					"required": [
+						"idle",
+						"active"
+					]
+				},
+				"file": {
+					"type": "string",
+					"description": "File select mode label"
+				},
+				"fileDrop": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string",
+							"description": "File drop section title"
+						},
+						"description": {
+							"type": "string",
+							"description": "File drop section description"
+						},
+						"button": {
+							"type": "string",
+							"description": "File drop section button text"
+						}
+					},
+					"required": [
+						"title",
+						"description",
+						"button"
+					]
+				}
+			},
+			"required": [
+				"heading",
+				"description",
+				"warning",
+				"preview",
+				"submit",
+				"file",
+				"fileDrop"
+			]
+		},
 		"header": {
 			"decompress": {
 				"type": "string",
@@ -166,6 +271,7 @@
 	"required": [
 		"meta",
 		"compress",
+		"decompress",
 		"header",
 		"footer"
 	]

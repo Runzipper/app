@@ -106,8 +106,6 @@ export const tableDescriptionStyle = style({
 	color: '#6C7280',
 	marginTop: 8,
 	marginBottom: 24,
-	textWrap: 'pretty',
-	wordBreak: 'keep-all',
 });
 
 export const compressButtonStyle = style({

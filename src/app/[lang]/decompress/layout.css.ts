@@ -17,4 +17,6 @@ export const descriptionStyle = style({
 	fontSize: Theme.fontSize.sizeLg,
 	color: '#6C7280',
 	marginBottom: Theme.spacing['12'],
+	textWrap: 'pretty',
+	wordBreak: 'keep-all',
 });

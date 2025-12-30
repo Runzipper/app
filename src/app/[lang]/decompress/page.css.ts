@@ -61,10 +61,13 @@ export const dropboxContainerStyle = style({
 	display: 'flex',
 	flexDirection: 'column',
 	flexGrow: 1,
-	flexShrink: 1,
+	flexShrink: 0,
 	gap: Theme.spacing[3],
 	transition: 'flex-basis 0.5s ease-in-out',
 	minHeight: 0,
+	textAlign: 'center',
+	textWrap: 'pretty',
+	wordBreak: 'keep-all',
 
 	'@media': {
 		'screen and (max-width:768px)': {
@@ -103,6 +106,8 @@ export const tableDescriptionStyle = style({
 	color: '#6C7280',
 	marginTop: 8,
 	marginBottom: 24,
+	textWrap: 'pretty',
+	wordBreak: 'keep-all',
 });
 
 export const compressButtonStyle = style({
